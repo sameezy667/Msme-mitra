@@ -4,42 +4,108 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-:root {
-  --primary-orange: #FF6F00;
-  --primary-blue: #1E88E5;
-  --dark-bg: #121212;
-  --dark-grey: #1A1A1A;
-  --text-primary: #212121;
-  --text-secondary: #757575;
-  --text-light: #E0E0E0;
-  --bg-light: #FAFAFA;
-  --bg-white: #FFFFFF;
-  --border-light: #E0E0E0;
-  --shadow-light: rgba(0, 0, 0, 0.08);
+/* Base reset and font loading */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #FAFAFA !important;
+    background-color: #FAFAFA !important;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #FAFAFA !important;
+    background-color: #FAFAFA !important;
+    color: #212121 !important;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-/* Force light theme - stronger overrides for production */
-html, body {
-  background: #FAFAFA !important;
-  background-color: #FAFAFA !important;
-  color: #212121 !important;
-  min-height: 100vh !important;
-}
+/* Define component styles explicitly for production */
+@layer components {
+  .pro-card {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
 
-html {
-  background: #FAFAFA !important;
-  background-color: #FAFAFA !important;
-}
+  .pro-card-dark {
+    background: #121212;
+    border: 1px solid #333333;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
 
-* {
-  font-family: 'Inter', sans-serif;
-}
+  .btn-primary {
+    background: #FF6F00;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(255, 111, 0, 0.2);
+  }
 
-/* Override any default dark styles */
-body, html, #__next, [data-theme="dark"] {
-  background: #FAFAFA !important;
-  background-color: #FAFAFA !important;
-  color: #212121 !important;
+  .btn-primary:hover {
+    background: #E65100;
+    box-shadow: 0 4px 8px rgba(255, 111, 0, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:disabled {
+    background: #BDBDBD;
+    color: #757575;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+  }
+
+  .input-primary {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    color: #212121;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-primary:focus {
+    border-color: #FF6F00;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 111, 0, 0.1);
+  }
+
+  .message-bot {
+    background: #FFFFFF;
+    color: #212121;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .message-user {
+    background: #1E88E5;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(30, 136, 229, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
 }
 
 /* Professional card styles */
