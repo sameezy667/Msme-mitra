@@ -105,7 +105,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{ background: '#FAFAFA', minHeight: '100vh' }}>
       <div className="flex h-screen max-w-screen-2xl mx-auto">
         {/* Main Chat Area */}
         <div className="flex-1 flex flex-col min-w-0">

@@ -23,9 +23,13 @@
 }
 
 body {
-  background: #FAFAFA;
-  color: #212121;
+  background: #FAFAFA !important;
+  color: #212121 !important;
   min-height: 100vh;
+}
+
+html {
+  background: #FAFAFA !important;
 }
 
 /* Professional card styles */
