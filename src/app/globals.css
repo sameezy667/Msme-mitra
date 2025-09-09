@@ -18,18 +18,28 @@
   --shadow-light: rgba(0, 0, 0, 0.08);
 }
 
-* {
-  font-family: 'Inter', sans-serif;
-}
-
-body {
+/* Force light theme - stronger overrides for production */
+html, body {
   background: #FAFAFA !important;
+  background-color: #FAFAFA !important;
   color: #212121 !important;
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
 
 html {
   background: #FAFAFA !important;
+  background-color: #FAFAFA !important;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Override any default dark styles */
+body, html, #__next, [data-theme="dark"] {
+  background: #FAFAFA !important;
+  background-color: #FAFAFA !important;
+  color: #212121 !important;
 }
 
 /* Professional card styles */

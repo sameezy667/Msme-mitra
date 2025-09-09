@@ -26,10 +26,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ background: '#FAFAFA' }}>
+    <html lang="en" style={{ background: '#FAFAFA', backgroundColor: '#FAFAFA' }}>
+      <head>
+        <style>{`
+          html, body, #__next {
+            background: #FAFAFA !important;
+            background-color: #FAFAFA !important;
+            color: #212121 !important;
+          }
+        `}</style>
+      </head>
       <body 
         className={`${inter.className} antialiased`}
-        style={{ background: '#FAFAFA', color: '#212121' }}
+        style={{ background: '#FAFAFA', backgroundColor: '#FAFAFA', color: '#212121' }}
       >
         {children}
       </body>
